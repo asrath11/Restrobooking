@@ -1,0 +1,9 @@
+.slick-prev:before,
+.slick-next:before {
+  color: #da423c; /* Change to your brand color */
+}
+.slick-slide {
+  padding: 0px; /* Adjust to reduce or increase spacing */
+  display: flex;
+  justify-content: center;
+}
