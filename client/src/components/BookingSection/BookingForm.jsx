@@ -1,7 +1,5 @@
 // BookingForm.jsx
 import React, { useState } from 'react';
-import PopUp from '../PopUpSection/PopUp';
-import { CircleCheck } from 'lucide-react';
 const BookingForm = ({
   handleDateChange,
   handlePriceChange,
@@ -13,11 +11,6 @@ const BookingForm = ({
   price,
   selectedPackage,
 }) => {
-  let [isPopUp, setIsPopUp] = useState('false');
-  function handlePopUp() {
-    setIsPopUp(true);
-  }
-  console.log(isPopUp);
   return (
     <>
       <form method='post' onSubmit={handleOnSubmit} className='space-y-6 text-lg'>
@@ -100,11 +93,7 @@ const BookingForm = ({
           <button
             type='submit'
             className='bg-brand-primary text-background-light px-6 py-3 rounded mt-4 my-10 hover:bg-brand-primary-hover cursor-pointer'
-            onClick={handlePopUp}
           >
-            {isPopUp && (
-              <PopUp icon={CircleCheck} desc={'Successfully booked'}></PopUp>
-            )}
             Book Now
           </button>
         </div>
