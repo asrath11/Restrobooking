@@ -24,7 +24,7 @@ function Theater() {
     noOfPerson: '',
   });
   const [slotData, setSlotData] = useState([]);
-  const [isPopUp, setIsPopUp] = useState[false];
+  const [isPopUp, setIsPopUp] = useState(false);
 
   const handleDateChange = (e) => {
     const date = e.target.value;
