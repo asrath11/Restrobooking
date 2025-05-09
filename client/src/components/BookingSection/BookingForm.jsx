@@ -102,7 +102,7 @@ const BookingForm = ({
           </button>
         </div>
       </form>
-      {/* {isPopUp && <PopUp icon={CircleCheck} desc={'Successfully Booked'} />} */}
+      {isPopUp && <PopUp icon={CircleCheck} desc={'Successfully Booked'} />}
     </>
   );
 };
