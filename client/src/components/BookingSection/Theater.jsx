@@ -7,7 +7,6 @@ import HeaderSection from './HeaderSection';
 import BookingForm from './BookingForm';
 import BookingSummary from './BookingSummary';
 
-
 function Theater() {
   const backendUrl = 'https://restrobooking-tfyl.onrender.com';
   const { state } = useLocation();
@@ -72,7 +71,6 @@ function Theater() {
       });
 
       const { slots } = response.data;
-      console.log(slots);
       setIsPopUp(true);
     } catch (error) {
       console.error('Error booking slot:', error);
