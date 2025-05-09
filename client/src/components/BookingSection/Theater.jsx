@@ -8,6 +8,7 @@ import BookingForm from './BookingForm';
 import BookingSummary from './BookingSummary';
 
 function Theater() {
+  const backendUrl = 'https://restrobooking-tfyl.onrender.com';
   const { state } = useLocation();
   const { package: packageName } = useParams();
   const packageFormatted = packageName.replace(/-/g, ' ');
@@ -61,15 +62,12 @@ function Theater() {
     e.preventDefault();
     const isoDate = new Date(formData.date).toISOString();
     try {
-      const response = await axios.post(
-        'http://localhost:3000/api/v1/slotbookings',
-        {
-          date: isoDate,
-          timeSlot: formData.timeSlot,
-          numberOfPeople: formData.noOfPerson,
-          packageId: selectedPackage.id,
-        }
-      );
+      const response = await axios.post(`${backendUrl}/api/v1/slotbookings`, {
+        date: isoDate,
+        timeSlot: formData.timeSlot,
+        numberOfPeople: formData.noOfPerson,
+        packageId: selectedPackage.id,
+      });
 
       const { slots } = response.data;
       console.log(slots);
@@ -84,7 +82,7 @@ function Theater() {
     const getAllSlots = async () => {
       const isoDate = new Date(formData.date).toISOString();
       const response = await axios.get(
-        `http://localhost:3000/api/v1/slotbookings/${isoDate}` //get slot data by date
+        `${backendUrl}/api/v1/slotbookings/${isoDate}` //get slot data by date
       );
       const slots = response.data.slots;
       setSlotData(slots);

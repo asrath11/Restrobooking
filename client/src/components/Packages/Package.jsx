@@ -2,16 +2,15 @@ import React, { useEffect } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 
 function Package() {
+  const backendUrl = 'https://restrobooking-tfyl.onrender.com';
   let { area } = useParams();
   const navigate = useNavigate();
   const [packages, setPackages] = React.useState([]);
-
+  console.log(packages);
   useEffect(() => {
     const fetchData = async () => {
       try {
-        let response = await fetch(
-          `http://localhost:3000/api/v1/packages/areas/${area}`
-        );
+        let response = await fetch(`${backendUrl}/api/v1/packages/areas/${area}`);
         response = await response.json();
         setPackages(response.packages);
       } catch (error) {
@@ -40,7 +39,7 @@ function Package() {
             <div className='w-full h-48 sm:h-56 md:h-64 relative overflow-hidden'>
               <img
                 className='w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-300'
-                src={`http://localhost:3000/img/packages/${pkg.imageCover}`}
+                src={`${backendUrl}/img/packages/${pkg.imageCover}`}
                 alt={pkg.name}
               />
             </div>

@@ -2,10 +2,11 @@ import React, { useEffect, useState } from 'react';
 import LocationCard from './LocationCard';
 
 function Locations() {
+  const backendUrl = 'https://restrobooking-tfyl.onrender.com';
   const [cities, setCities] = useState([]);
 
   useEffect(() => {
-    fetch('http://localhost:3000/api/v1/locations')
+    fetch(`${backendUrl}/api/v1/locations`)
       .then((res) => res.json())
       .then((data) => {
         setCities(
