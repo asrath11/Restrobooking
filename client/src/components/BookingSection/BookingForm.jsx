@@ -41,7 +41,7 @@ const BookingForm = ({
         <option value=''>Select a time slot</option>
         {timeSlotsForPackage.map((time, index) => {
           const slotInfo = slotData?.find((slot) => slot.timeSlot === time);
-          const isBooked = slotInfo?.status === 'Booked';
+          const isBooked = slotInfo?.status === 'booked';
 
           return (
             <option

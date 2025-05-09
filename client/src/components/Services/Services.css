@@ -1,9 +1,12 @@
+.slick-prev,
+.slick-next {
+  z-index: 10;
+  width: 80px;
+  height: 40px;
+}
+
 .slick-prev:before,
 .slick-next:before {
-  color: #da423c; /* Change to your brand color */
-}
-.slick-slide {
-  padding: 0px; /* Adjust to reduce or increase spacing */
-  display: flex;
-  justify-content: center;
+  color: #da423c;
+  font-size: 28px;
 }

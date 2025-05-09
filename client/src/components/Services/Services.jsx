@@ -13,7 +13,15 @@ function Services() {
     slidesToScroll: 1,
     responsive: [
       {
-        breakpoint: 1024,
+        breakpoint: 1280, // Large desktops
+        settings: {
+          slidesToShow: 3,
+          slidesToScroll: 1,
+          arrows: true,
+        },
+      },
+      {
+        breakpoint: 1024, // Laptops
         settings: {
           slidesToShow: 2,
           slidesToScroll: 1,
@@ -21,35 +29,41 @@ function Services() {
         },
       },
       {
-        breakpoint: 768,
+        breakpoint: 768, // Tablets
         settings: {
           slidesToShow: 1,
           slidesToScroll: 1,
           arrows: true,
         },
       },
+      {
+        breakpoint: 480, // Mobile
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1,
+          arrows: false,
+          dots: true,
+        },
+      },
     ],
   };
 
   return (
-    <section className='m-7 relative'>
-      <h1 className='text-center text-brand-primary text-2xl font-bold mb-6'>
-        Our Services
-      </h1>
+    <div className='relative -mx-3 sm:-mx-4 px-4'>
       <Slider {...settings}>
         {SERVICES.map((service, index) => (
-          <div key={index}>
-            <div className='relative group rounded-md overflow-hidden shadow-lg w-[400px] h-[300px] mx-auto'>
+          <div key={index} className='px-3 sm:px-4'>
+            <div className='relative group rounded-md overflow-hidden shadow-lg max-w-[400px] w-full h-[300px] sm:h-[350px] mx-auto'>
               <img
                 src={service.img}
                 alt={service.title}
                 className='w-full h-full object-cover'
               />
               <div className='absolute bottom-0 left-0 w-full py-4 bg-brand-primary text-white transition-all duration-300 ease-in-out h-[60px] group-hover:h-[125px] flex flex-col items-center overflow-hidden'>
-                <h3 className='text-md font-semibold mb-1 text-center'>
+                <h3 className='text-md sm:text-lg font-semibold mb-1 text-center'>
                   {service.title}
                 </h3>
-                <p className='text-sm opacity-0 group-hover:opacity-100 transition-opacity duration-300 ease-in mt-1 text-center px-2'>
+                <p className='text-sm sm:text-base opacity-0 group-hover:opacity-100 transition-opacity duration-300 ease-in mt-1 text-center px-2'>
                   {service.description}
                 </p>
               </div>
@@ -57,7 +71,7 @@ function Services() {
           </div>
         ))}
       </Slider>
-    </section>
+    </div>
   );
 }
 
