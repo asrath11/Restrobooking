@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { ChevronDown, ChevronUp, Pin, ArrowRight } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
-import Hyderabad from '../../assets/Hyderabad.jpg';
+import Hyderabad from '../../assets/hyderabad.jpg';
 
 function LocationCard({ city, locations = [] }) {
   const [isExpanded, setIsExpanded] = useState(false);
