@@ -6,7 +6,7 @@ import { LOCATIONS_TIME_SLOTS } from '../../../data';
 import HeaderSection from './HeaderSection';
 import BookingForm from './BookingForm';
 import BookingSummary from './BookingSummary';
-import PopUp from './PopUp';
+import PopUp from './../PopUpSection/PopUp';
 import { CircleCheck } from 'lucide-react';
 
 function Theater() {
