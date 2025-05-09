@@ -43,26 +43,30 @@ function LocationCard({ city, locations = [] }) {
 
         {isExpanded && (
           <div className='px-4 pb-3 text-center bg-background-light text-background-dark'>
-            {locations.map((location, index) => (
-              <div
-                key={index}
-                className='w-full flex items-center justify-between py-2 border-b border-muted last:border-none'
-              >
-                <div className='flex items-center'>
-                  <Pin className='text-brand-primary' />
-                  <span className='text-xl px-4'>{location}</span>
-                </div>
-                <button
-                  onClick={() => handleClick(`/${location.toLowerCase()}`)}
-                  className='hover:scale-105 transition-transform'
+            {locations.length === 0 ? (
+              <div className='py-3 text-xl text-brand-primary'>Coming Soon</div>
+            ) : (
+              locations.map((location, index) => (
+                <div
+                  key={index}
+                  className='w-full flex items-center justify-between py-2 border-b border-muted last:border-none'
                 >
-                  <ArrowRight
-                    size={30}
-                    className='cursor-pointer text-brand-primary'
-                  />
-                </button>
-              </div>
-            ))}
+                  <div className='flex items-center'>
+                    <Pin className='text-brand-primary' />
+                    <span className='text-xl px-4'>{location}</span>
+                  </div>
+                  <button
+                    onClick={() => handleClick(`/${location.toLowerCase()}`)}
+                    className='hover:scale-105 transition-transform'
+                  >
+                    <ArrowRight
+                      size={30}
+                      className='cursor-pointer text-brand-primary'
+                    />
+                  </button>
+                </div>
+              ))
+            )}
           </div>
         )}
       </div>
