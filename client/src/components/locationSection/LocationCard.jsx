@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { ChevronDown, ChevronUp, Pin, ArrowRight } from 'lucide-react';
+import { ChevronDown, ChevronUp, Pin, ArrowRight, Clock } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
 import Hyderabad from '../../assets/hyderabad.jpg';
 
