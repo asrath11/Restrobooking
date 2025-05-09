@@ -14,6 +14,7 @@ const BookingForm = ({
   selectedPackage,
   isPopUp,
 }) => {
+  console.log(isPopUp);
   return (
     <>
       <form method='post' onSubmit={handleOnSubmit} className='space-y-6 text-lg'>
