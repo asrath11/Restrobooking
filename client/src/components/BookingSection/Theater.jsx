@@ -6,6 +6,8 @@ import { LOCATIONS_TIME_SLOTS } from '../../../data';
 import HeaderSection from './HeaderSection';
 import BookingForm from './BookingForm';
 import BookingSummary from './BookingSummary';
+import PopUp from './PopUp';
+import { CircleCheck } from 'lucide-react';
 
 function Theater() {
   const backendUrl = 'https://restrobooking-tfyl.onrender.com';
@@ -63,14 +65,13 @@ function Theater() {
     e.preventDefault();
     const isoDate = new Date(formData.date).toISOString();
     try {
-      const response = await axios.post(`${backendUrl}/api/v1/slotbookings`, {
+      await axios.post(`${backendUrl}/api/v1/slotbookings`, {
         date: isoDate,
         timeSlot: formData.timeSlot,
         numberOfPeople: formData.noOfPerson,
         packageId: selectedPackage.id,
       });
 
-      const { slots } = response.data;
       setIsPopUp(true);
     } catch (error) {
       console.error('Error booking slot:', error);
@@ -82,13 +83,21 @@ function Theater() {
     const getAllSlots = async () => {
       const isoDate = new Date(formData.date).toISOString();
       const response = await axios.get(
-        `${backendUrl}/api/v1/slotbookings/${isoDate}` //get slot data by date
+        `${backendUrl}/api/v1/slotbookings/${isoDate}`
       );
       const slots = response.data.slots;
       setSlotData(slots);
     };
     getAllSlots();
   }, [formData]);
+
+  // Auto-dismiss popup after 3 seconds
+  useEffect(() => {
+    if (isPopUp) {
+      const timer = setTimeout(() => setIsPopUp(false), 3000);
+      return () => clearTimeout(timer);
+    }
+  }, [isPopUp]);
 
   const timeSlotsForPackage =
     LOCATIONS_TIME_SLOTS[packageFormatted.toLowerCase().replace(/\s+/g, '')] ||
@@ -98,6 +107,9 @@ function Theater() {
     <div className='bg-gray-900 text-gray-100 w-full min-h-screen'>
       {/* Header Section */}
       <HeaderSection selectedPackage={selectedPackage} />
+
+      {/* PopUp Notification */}
+      {isPopUp && <PopUp icon={CircleCheck} desc='Booking successful!' />}
 
       {/* Booking Section */}
       <div className='w-11/12 lg:w-3/4 mx-auto py-12 grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-12'>
