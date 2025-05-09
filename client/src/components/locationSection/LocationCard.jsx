@@ -44,7 +44,14 @@ function LocationCard({ city, locations = [] }) {
         {isExpanded && (
           <div className='px-4 pb-3 text-center bg-background-light text-background-dark'>
             {locations.length === 0 ? (
-              <div className='py-3 text-xl text-brand-primary'>Coming Soon</div>
+              <div className='py-6 flex flex-col items-center justify-center gap-2'>
+                <div className='animate-pulse'>
+                  <Clock className='text-brand-primary' size={40} />
+                </div>
+                <p className='text-xl font-semibold text-brand-primary'>
+                  Coming Soon
+                </p>
+              </div>
             ) : (
               locations.map((location, index) => (
                 <div
