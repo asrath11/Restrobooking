@@ -1,5 +1,7 @@
 // BookingForm.jsx
-import React, { useState } from 'react';
+import React from 'react';
+import PopUp from '../PopUpSection/PopUp';
+import { CircleCheck } from 'lucide-react';
 const BookingForm = ({
   handleDateChange,
   handlePriceChange,
@@ -10,6 +12,7 @@ const BookingForm = ({
   slotData,
   price,
   selectedPackage,
+  isPopUp,
 }) => {
   return (
     <>
@@ -98,6 +101,7 @@ const BookingForm = ({
           </button>
         </div>
       </form>
+      {isPopUp && <PopUp icon={CircleCheck} desc={'Successfully Booked'} />}
     </>
   );
 };

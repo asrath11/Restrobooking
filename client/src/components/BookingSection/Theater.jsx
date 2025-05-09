@@ -6,8 +6,7 @@ import { LOCATIONS_TIME_SLOTS } from '../../../data';
 import HeaderSection from './HeaderSection';
 import BookingForm from './BookingForm';
 import BookingSummary from './BookingSummary';
-import PopUp from '../PopUpSection/PopUp';
-import { CircleCheck } from 'lucide-react';
+
 
 function Theater() {
   const backendUrl = 'https://restrobooking-tfyl.onrender.com';
@@ -26,6 +25,7 @@ function Theater() {
     noOfPerson: '',
   });
   const [slotData, setSlotData] = useState([]);
+  const [isPopUp, setIsPopUp] = useState[false];
 
   const handleDateChange = (e) => {
     const date = e.target.value;
@@ -73,7 +73,7 @@ function Theater() {
 
       const { slots } = response.data;
       console.log(slots);
-      <PopUp icon={CircleCheck} desc={'successfully booked the room'}></PopUp>;
+      setIsPopUp(true);
     } catch (error) {
       console.error('Error booking slot:', error);
       alert('Booking failed. Please try again later.');
@@ -113,6 +113,7 @@ function Theater() {
           slotData={slotData}
           price={price}
           selectedPackage={selectedPackage}
+          isPopUp={isPopUp}
         />
 
         {/* Pricing Summary */}
