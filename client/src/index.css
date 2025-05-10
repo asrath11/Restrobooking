@@ -6,7 +6,7 @@
   --color-background-dark: #272626;
   --color-text-muted: #5a5858;
   --color-background-light: #fdfdfd;
-  --animate-popup: popup 2s ease-out;
+  --animate-popup: popup 3s ease-out;
   @keyframes popup {
     0% {
       opacity: 0;
