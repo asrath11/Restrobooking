@@ -18,15 +18,14 @@ const BookingForm = ({
         <label htmlFor='calendar' className='font-semibold text-background-light'>
           Select Date
         </label>
-        {currentDate > handleDateChange && console.log('time disable')}
         <input
           type='date'
           className='h-12 px-4 rounded shadow-inner bg-background-light text-background-dark'
           name='calendar'
           id='calendar'
           onChange={handleDateChange}
-          defaultValue={new Date().toISOString().split('T')[0]}
-          dis
+          defaultValue={currentDate}
+          min={currentDate}
           required
         />
       </div>

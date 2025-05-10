@@ -2,11 +2,10 @@ import React, { useEffect } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 
 function Package() {
-  const backendUrl = 'https://restrobooking-tfyl.onrender.com';
+  const backendUrl = 'http://localhost:8000';
   let { area } = useParams();
   const navigate = useNavigate();
   const [packages, setPackages] = React.useState([]);
-  console.log(packages);
   useEffect(() => {
     const fetchData = async () => {
       try {

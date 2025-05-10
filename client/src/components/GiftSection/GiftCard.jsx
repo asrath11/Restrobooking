@@ -1,6 +1,6 @@
 import React from 'react';
 
-function GiftCard({ title, description, icon: Icon }) {
+function GiftCard({ title, description, icon: Icon, image }) {
   return (
     <div
       className='w-full max-w-screen-sm md:max-w-[700px] lg:max-w-[800px] my-3 sm:my-4 md:my-5 
@@ -11,14 +11,19 @@ function GiftCard({ title, description, icon: Icon }) {
     >
       {/* Icon Container on the left */}
       <div
-        className='bg-brand-primary/10 p-3 rounded-lg flex-shrink-0 
+        className='p-3 rounded-lg flex-shrink-0 
         transition-colors duration-300 group-hover:bg-brand-primary/20
         flex justify-center items-center'
       >
-        <Icon
-          className='text-brand-primary w-10 h-10 md:w-12 md:h-12 
+        {Icon && (
+          <Icon
+            className='text-brand-primary w-10 h-10 md:w-12 md:h-12 
           transition-transform duration-300 hover:scale-105'
-        />
+          />
+        )}
+        {image && (
+          <img src={image} alt={title} className='h-10 w-10 object-contain' />
+        )}
       </div>
 
       {/* Text Container */}

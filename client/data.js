@@ -116,23 +116,6 @@ export const LOCATIONS_TIME_SLOTS = {
     '11:00 PM - 12:00 AM',
   ],
 };
-export const GIFT_SECTION_CONTENT = [
-  {
-    title: 'Birthday Party',
-    description:
-      'Unveil the magic of birthdays in our private party theater, where every moment shines with joy and celebration.',
-  },
-  {
-    title: 'Anniversary Celebration',
-    description:
-      'Cherish milestones and timeless love in our private party theater, where anniversaries sparkle with elegance and romance.',
-  },
-  {
-    title: 'Party & Events',
-    description:
-      'Step into a realm of limitless celebration at our private party theater, where every event unfolds with unparalleled charm.',
-  },
-];
 
 export const FEATURES = [
   'Birthdays',

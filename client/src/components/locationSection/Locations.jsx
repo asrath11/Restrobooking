@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import LocationCard from './LocationCard';
 
 function Locations() {
-  const backendUrl = 'https://restrobooking-tfyl.onrender.com';
+  const backendUrl = 'http://localhost:8000';
   const [cities, setCities] = useState([]);
 
   useEffect(() => {

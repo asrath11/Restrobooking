@@ -10,7 +10,7 @@ import PopUp from './../PopUpSection/PopUp';
 import { CircleCheck } from 'lucide-react';
 
 function Theater() {
-  const backendUrl = 'https://restrobooking-tfyl.onrender.com';
+  const backendUrl = 'http://localhost:8000';
   const { state } = useLocation();
   const { package: packageName } = useParams();
   const packageFormatted = packageName.replace(/-/g, ' ');
