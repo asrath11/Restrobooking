@@ -19,9 +19,9 @@ function Theater() {
   const selectedPackage = packages.find((pkg) => pkg.name === packageFormatted);
 
   const [price, setPrice] = useState(selectedPackage.price);
-  const today = new Date().toISOString().split('T')[0];
+  const currentDate = new Date().toISOString().split('T')[0];
   const [formData, setFormData] = useState({
-    date: today,
+    date: currentDate,
     timeSlot: '',
     noOfPerson: '',
   });
@@ -124,6 +124,7 @@ function Theater() {
           price={price}
           selectedPackage={selectedPackage}
           isPopUp={isPopUp}
+          currentDate={currentDate}
         />
 
         {/* Pricing Summary */}

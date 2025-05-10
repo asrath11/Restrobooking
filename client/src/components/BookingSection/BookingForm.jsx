@@ -10,6 +10,7 @@ const BookingForm = ({
   slotData,
   price,
   selectedPackage,
+  currentDate,
 }) => {
   return (
     <form method='post' onSubmit={handleOnSubmit} className='space-y-6 text-lg'>
@@ -17,6 +18,7 @@ const BookingForm = ({
         <label htmlFor='calendar' className='font-semibold text-background-light'>
           Select Date
         </label>
+        {currentDate > handleDateChange && console.log('time disable')}
         <input
           type='date'
           className='h-12 px-4 rounded shadow-inner bg-background-light text-background-dark'
@@ -24,6 +26,7 @@ const BookingForm = ({
           id='calendar'
           onChange={handleDateChange}
           defaultValue={new Date().toISOString().split('T')[0]}
+          dis
           required
         />
       </div>
