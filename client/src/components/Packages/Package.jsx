@@ -2,7 +2,7 @@ import React, { useEffect } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 
 function Package() {
-  const backendUrl = 'http://localhost:8000';
+  const backendUrl = 'https://restrobooking-tfyl.onrender.com';
   let { area } = useParams();
   const navigate = useNavigate();
   const [packages, setPackages] = React.useState([]);
