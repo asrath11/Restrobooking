@@ -32,7 +32,7 @@ app.use(express.urlencoded({ extended: true }));
 
 //cors options
 const corsOptions = {
-  origin: 'https://restrobooking-frontend.onrender.com',
+  origin: 'http://localhost:5173',
   methods: ['GET', 'POST', 'PUT', 'DELETE'],
   // allowedHeaders: ['Content-Type', 'Authorization'],
 };
