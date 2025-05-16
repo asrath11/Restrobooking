@@ -124,28 +124,7 @@ export const FEATURES = [
   'Gaming Sessions',
   'Movie Marathons',
 ];
-export const SERVICES = [
-  {
-    title: 'Food & Beverages',
-    description: 'Premium catering services with gourmet options',
-    img: '/images/food-service.jpg',
-  },
-  {
-    title: 'Bouquets',
-    description: 'Custom floral arrangements for every occasion',
-    img: '/images/bouquets.jpg',
-  },
-  {
-    title: 'Gifts',
-    description: 'Personalized gift packages and souvenirs',
-    img: '/images/gifts.jpg',
-  },
-  {
-    title: 'Decorations',
-    description: 'Theme-based venue decoration services',
-    img: '/images/decorations.jpg',
-  },
-];
+
 export const FOOTER_CONTENT = {
   mainLinks: [
     { label: 'Home', url: '/' },

@@ -2,7 +2,7 @@ import Slider from 'react-slick';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 import './Services.css';
-import { SERVICES } from '../../../data';
+import { SERVICES } from './ServiceData';
 
 function Services() {
   const settings = {
@@ -49,17 +49,17 @@ function Services() {
   };
 
   return (
-    <div className='relative -mx-3 sm:-mx-4 px-4'>
+    <div className='relative mx-20 my-5'>
       <Slider {...settings}>
         {SERVICES.map((service, index) => (
-          <div key={index} className='px-3 sm:px-4'>
-            <div className='relative group rounded-md overflow-hidden shadow-lg max-w-[400px] w-full h-[300px] sm:h-[350px] mx-auto'>
+          <div key={index} className='lg:px-0 sm:px-4'>
+            <div className='relative group rounded-md overflow-hidden shadow-lg max-w-[300px] w-full h-[300px] sm:h-[350px] mx-auto'>
               <img
                 src={service.img}
                 alt={service.title}
                 className='w-full h-full object-cover'
               />
-              <div className='absolute bottom-0 left-0 w-full py-4 bg-brand-primary text-white transition-all duration-300 ease-in-out h-[60px] group-hover:h-[125px] flex flex-col items-center overflow-hidden'>
+              <div className='absolute bottom-0 left-0 w-full py-4 bg-brand-primary text-white transition-all duration-300 ease-in-out h-[100px] group-hover:h-[125px] flex flex-col items-center overflow-hidden'>
                 <h3 className='text-md sm:text-lg font-semibold mb-1 text-center'>
                   {service.title}
                 </h3>
